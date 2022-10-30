@@ -23,9 +23,6 @@ void Sound::setup() {
     audio.setPinout(I2S_BCLK, I2S_LRC, I2S_DOUT);
     audio.setBalance(-16); // mutes the left channel
     audio.setVolume(21);   // max loudness
-
-    // TODO: REMOVE
-    audio.connecttoFS(SPIFFS, "001-worms-incoming.mp3");
 }
 
 void Sound::handle() {
@@ -33,5 +30,13 @@ void Sound::handle() {
 }
 
 void Sound::playMail() {
+    audio.connecttoFS(SPIFFS, "003-youve-got-mail.wav");
+}
+
+void Sound::playJetsons() {
     audio.connecttoFS(SPIFFS, "002-jetsons.mp3");
+}
+
+void Sound::playWorms() {
+    audio.connecttoFS(SPIFFS, "001-worms-incoming.mp3");
 }

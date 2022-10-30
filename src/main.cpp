@@ -36,6 +36,12 @@ void readAnySerialMessage() {
 	} else if (msg == "3") {
 		Serial.printf("playing mail...\n");
 		logic.sound.playMail();
+	} else if (msg == "4") {
+		Serial.printf("playing worms...\n");
+		logic.sound.playWorms();
+	} else if (msg == "5") {
+		Serial.printf("playing jetsons...\n");
+		logic.sound.playJetsons();
 	} else if (msg == "s") {
 		pos = 15;
 		Serial.println("Setting to 15 (launch)");

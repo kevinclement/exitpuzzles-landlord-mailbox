@@ -1,7 +1,7 @@
 #include "Arduino.h"
 #include "logic.h"
 
-#define PIN_RELAY   14
+#define PIN_RELAY 14
 
 Vacuum::Vacuum(Logic &logic)
 : _logic(logic)
@@ -21,8 +21,10 @@ void Vacuum::toggle() {
 }
 
 void Vacuum::on() {
+    relayOn = true;
 }
 
 void Vacuum::off() {
+    relayOn = false;
 }
 

@@ -9,7 +9,9 @@ class Sound {
     void setup();
     void handle();
     void playMail();
-
+    void playJetsons();
+    void playWorms();
+    
   private:
     Logic &_logic;
 };
