@@ -3,29 +3,32 @@
 
 Logic::Logic()
   : sound(*this),
-    vacuum(*this)
+    vacuum(*this),
+    servo(*this)
 {
 }
 
 void Logic::setup() {
   sound.setup();
   vacuum.setup();
+  servo.setup();
 }
 
 void Logic::handle() {
   sound.handle();
   vacuum.handle();
+  servo.handle();
 }
 
 void Logic::status() {
   char cMsg[254];
   sprintf(cMsg, 
     "status="
-      "foo:%s,"
+      "vacuum:%s,"
 
       "\r\n"
     ,
-      "on"
+      vacuum.status()
   );
 
   Serial.print(cMsg);

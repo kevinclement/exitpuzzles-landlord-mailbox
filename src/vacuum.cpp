@@ -28,3 +28,6 @@ void Vacuum::off() {
     relayOn = false;
 }
 
+String Vacuum::status() {
+    return relayOn ? "on" : "off";
+}

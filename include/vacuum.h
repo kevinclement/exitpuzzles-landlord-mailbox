@@ -11,6 +11,7 @@ class Vacuum {
     void toggle();
     void on();
     void off();
+    String status();
 
   private:
     Logic &_logic;
