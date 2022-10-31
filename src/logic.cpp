@@ -28,10 +28,10 @@ void Logic::handle() {
   if (!handledResetPressed && resetButton.pressed) {
     Serial.println("Reset button pressed.");
     handledResetPressed = true;
+    servo.startPosition();
   }
 
   if (handledResetPressed && !resetButton.pressed) {
-    Serial.println("button up now..resetting...");
     handledResetPressed = false;
   }
 }
