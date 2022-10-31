@@ -22,12 +22,19 @@ void MyServo::setup() {
 }
 
 void MyServo::handle() {
-	// write current pos
 	myservo.write(pos);
 }
 
 void MyServo::setPosition(int newPos) { 
     pos = newPos;
+}
+
+void MyServo::startPosition() { 
+    setPosition(15);
+}
+
+void MyServo::endPosition() { 
+    setPosition(115);
 }
 
 int MyServo::getPosition() { 

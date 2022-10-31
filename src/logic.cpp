@@ -12,6 +12,9 @@ void Logic::setup() {
   sound.setup();
   vacuum.setup();
   servo.setup();
+
+  // Move servo to start position on reset
+  servo.startPosition();
 }
 
 void Logic::handle() {
@@ -25,10 +28,12 @@ void Logic::status() {
   sprintf(cMsg, 
     "status="
       "vacuum:%s,"
+      "servo:%d"
 
       "\r\n"
     ,
-      vacuum.status()
+      vacuum.status(),
+      servo.getPosition()
   );
 
   Serial.print(cMsg);

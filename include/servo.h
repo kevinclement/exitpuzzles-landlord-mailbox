@@ -10,6 +10,8 @@ class MyServo {
     void handle();
     void setPosition(int pos);
     int getPosition();
+    void startPosition();
+    void endPosition();
     void increment();
 
   private:

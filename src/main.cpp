@@ -36,12 +36,12 @@ void readAnySerialMessage() {
 	} else if (msg == "5") {
 		Serial.printf("playing jetsons...\n");
 		logic.sound.playJetsons();
-	} else if (msg == "s") {
-		Serial.println("Setting to 15 (launch)");
-		logic.servo.setPosition(15);
-	} else if (msg == "e") {
-		Serial.println("Setting to 115 (end)");
-		logic.servo.setPosition(115);
+	} else if (msg == "l") {
+		Serial.println("Setting to launch position...");
+		logic.servo.startPosition();
+	} else if (msg == "f") {
+		Serial.println("Setting to finish position...");
+		logic.servo.endPosition();
 	} else if (msg == "v") {
 		Serial.println("Toggling vacuum...");
 		logic.vacuum.toggle();
