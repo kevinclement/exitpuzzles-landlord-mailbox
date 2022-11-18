@@ -6,6 +6,8 @@
 #include "servo.h"
 #include "resetButton.h"
 
+enum State { WAITING, STARTING, DROPPING, SETTLING, ALERTING, DONE };
+
 class Logic {
 public:
   Logic();
@@ -16,9 +18,11 @@ public:
   
   void setup();
   void handle();
+  void trigger();
   void status();
   
 private:
   bool handledResetPressed = false;
+  State state = WAITING;
 };
 

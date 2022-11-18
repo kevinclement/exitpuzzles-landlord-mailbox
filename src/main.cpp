@@ -45,6 +45,8 @@ void readAnySerialMessage() {
 	} else if (msg == "v") {
 		Serial.println("Toggling vacuum...");
 		logic.vacuum.toggle();
+	} else if (msg == "t") {
+		logic.trigger();
 	} else if (msg == "i") {
 		logic.servo.increment();
   	} else {

@@ -11,6 +11,7 @@ class Sound {
     void playMail();
     void playJetsons();
     void playWorms();
+    bool isPlaying();
     
   private:
     Logic &_logic;

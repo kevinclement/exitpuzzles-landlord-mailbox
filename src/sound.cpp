@@ -40,3 +40,7 @@ void Sound::playJetsons() {
 void Sound::playWorms() {
     audio.connecttoFS(SPIFFS, "001-worms-incoming.mp3");
 }
+
+bool Sound::isPlaying() {
+    return audio.isRunning();
+}
