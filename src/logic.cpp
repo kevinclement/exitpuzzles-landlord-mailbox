@@ -1,9 +1,11 @@
 #include "Arduino.h"
 #include "logic.h"
 
-#define START_DELAY_MS   1000
+#define START_DELAY_MS   3000
 #define DROP_DELAY_MS    3000
 #define SETTLE_DELAY_MS  2000
+
+void(* resetFunc) (void) = 0;
 
 const char *stateStrings[] = { "WAITING", "STARTING", "DROPPING", "SETTLING", "ALERTING", "DONE" };
 
@@ -37,8 +39,7 @@ void Logic::handle() {
 
   if (!handledResetPressed && resetButton.pressed) {
     Serial.println("Reset button pressed.");
-    handledResetPressed = true;
-    servo.startPosition();
+    reset();
   }
 
   if (handledResetPressed && !resetButton.pressed) {
@@ -87,6 +88,7 @@ void Logic::status() {
       "vacuum:%s,"
       "servo:%d,"
       "state:%s,"
+      "solved:%s,"
       "resetButton:%s"
 
       "\r\n"
@@ -94,8 +96,13 @@ void Logic::status() {
       vacuum.status(),
       servo.getPosition(),
       stateStrings[state],
+      state == DONE ? "true" : "false",
       resetButton.pressed ? "on" : "off"
   );
 
   Serial.print(cMsg);
+}
+
+void Logic::reset() {
+  resetFunc();
 }

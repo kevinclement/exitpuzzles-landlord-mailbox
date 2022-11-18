@@ -2,7 +2,6 @@
 #include "logic.h"
 
 Logic logic;
-void(* resetFunc) (void) = 0;
 
 bool servoEnabled 	= true;
 bool forward 		= true;
@@ -18,7 +17,7 @@ void readAnySerialMessage() {
 	Serial.println("' command");
 
 	if (msg == "reset" || msg == "reboot" || msg == "r") {
-    	resetFunc();
+    	logic.reset();
 	} else if (msg == "status" || msg == "s") {
   	  	logic.status();
   	} else if (msg == "0") {

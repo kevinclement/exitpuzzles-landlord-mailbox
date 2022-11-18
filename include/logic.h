@@ -20,6 +20,7 @@ public:
   void handle();
   void trigger();
   void status();
+  void reset();
   
 private:
   bool handledResetPressed = false;
