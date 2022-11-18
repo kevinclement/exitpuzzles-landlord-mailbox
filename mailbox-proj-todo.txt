@@ -1,0 +1,19 @@
+[ ] dial in you've got mail mp3 and distortion
+[ ] reset button just does a device reset
+
+[ ] solve
+    [ ] vacuum for 3s
+    [ ] servo to drop, wait 2s
+    [ ] vacuum off
+    [ ] play final sound
+
+[ ] final sound extended
+    [ ] add toaster oven 
+
+[ ] command line
+  [ ] solve
+  [ ] help
+  [ ] status proper
+    [ ] fields needed
+    [ ] triggered after events
+  
