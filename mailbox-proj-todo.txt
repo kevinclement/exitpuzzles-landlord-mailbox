@@ -1,15 +1,11 @@
-[ ] dial in you've got mail mp3 and distortion
-[ ] reset button just does a device reset
-
-[ ] solve
-    [ ] vacuum for 3s
-    [ ] servo to drop, wait 2s
-    [ ] vacuum off
-
-[ ] command line
-  [ ] solve
-  [ ] help
-  [ ] status proper
-    [ ] fields needed
-    [ ] triggered after events
+[x] reset button just does a device reset
+[x] solve
+    [x] vacuum for 3s
+    [x] servo to drop, wait 2s
+    [x] vacuum off
+[x] command line
+  [x] solve
+  [x] status proper
+    [x] fields needed
+    [x] triggered after events
   
