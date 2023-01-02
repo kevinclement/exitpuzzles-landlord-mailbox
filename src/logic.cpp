@@ -45,6 +45,7 @@ void Logic::handle() {
     Serial.println("Vacuum ran for min time.  Triggering drop...");
     state = DROPPING;
     dropTime = millis();
+    status();
     servo.endPosition();
   }
 
@@ -53,21 +54,22 @@ void Logic::handle() {
     state = SETTLING;
     settleTime = millis();
     vacuum.off();
+    status();
   }
 
   if (state == SETTLING && millis() - settleTime > SETTLE_DELAY_MS) {
     Serial.println("Settled.  All DONE.");
     state = DONE;
+    status();
   }
-
 }
 
 void Logic::trigger() {
 		Serial.println("Triggering device...");
     state = STARTING;
-
     vacuum.on();
     vacuumTime = millis();
+    status();
 }
 
 void Logic::status() {
