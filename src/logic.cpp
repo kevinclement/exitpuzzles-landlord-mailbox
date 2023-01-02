@@ -88,7 +88,6 @@ void Logic::status() {
       "vacuum:%s,"
       "servo:%d,"
       "state:%s,"
-      "solved:%s,"
       "resetButton:%s"
 
       "\r\n"
@@ -96,7 +95,6 @@ void Logic::status() {
       vacuum.status(),
       servo.getPosition(),
       stateStrings[state],
-      state == DONE ? "true" : "false",
       resetButton.pressed ? "on" : "off"
   );
 

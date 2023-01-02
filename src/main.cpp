@@ -26,25 +26,16 @@ void readAnySerialMessage() {
 	} else if (msg == "8") {
 		Serial.println("Setting to 180");
 		logic.servo.setPosition(180);
-	} else if (msg == "3") {
-		Serial.printf("playing mail...\n");
-		logic.sound.playMail();
-	} else if (msg == "4") {
-		Serial.printf("playing worms...\n");
-		logic.sound.playWorms();
-	} else if (msg == "5") {
-		Serial.printf("playing jetsons...\n");
-		logic.sound.playJetsons();
-	} else if (msg == "l") {
-		Serial.println("Setting to launch position...");
+	} else if (msg == "l" || msg == "startPos") {
+		Serial.println("Setting to start position...");
 		logic.servo.startPosition();
-	} else if (msg == "f") {
-		Serial.println("Setting to finish position...");
+	} else if (msg == "f" || msg == "endPosition") {
+		Serial.println("Setting to end position...");
 		logic.servo.endPosition();
-	} else if (msg == "v") {
+	} else if (msg == "v" || msg == "vacuum") {
 		Serial.println("Toggling vacuum...");
 		logic.vacuum.toggle();
-	} else if (msg == "t") {
+	} else if (msg == "t" || msg == "drop") {
 		logic.trigger();
 	} else if (msg == "i") {
 		logic.servo.increment();
