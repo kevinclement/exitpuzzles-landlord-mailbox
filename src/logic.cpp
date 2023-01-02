@@ -5,8 +5,6 @@
 #define DROP_DELAY_MS    3000
 #define SETTLE_DELAY_MS  2000
 
-void(* resetFunc) (void) = 0;
-
 const char *stateStrings[] = { "WAITING", "STARTING", "DROPPING", "SETTLING", "ALERTING", "DONE" };
 
 unsigned long vacuumTime = 0;
@@ -102,5 +100,5 @@ void Logic::status() {
 }
 
 void Logic::reset() {
-  resetFunc();
+  ESP.restart();
 }

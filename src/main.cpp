@@ -52,7 +52,6 @@ void setup() {
 	Serial.println("Mailbox by kevinc...\n");
 
 	logic.setup();
-  	logic.status();
 }
 
 void loop() {
