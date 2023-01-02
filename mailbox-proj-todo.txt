@@ -5,10 +5,6 @@
     [ ] vacuum for 3s
     [ ] servo to drop, wait 2s
     [ ] vacuum off
-    [ ] play final sound
-
-[ ] final sound extended
-    [ ] add toaster oven 
 
 [ ] command line
   [ ] solve

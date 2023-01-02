@@ -5,22 +5,20 @@
 #define DROP_DELAY_MS    3000
 #define SETTLE_DELAY_MS  2000
 
-const char *stateStrings[] = { "WAITING", "STARTING", "DROPPING", "SETTLING", "ALERTING", "DONE" };
+const char *stateStrings[] = { "WAITING", "STARTING", "DROPPING", "SETTLING", "DONE" };
 
 unsigned long vacuumTime = 0;
 unsigned long dropTime = 0;
 unsigned long settleTime = 0;
 
 Logic::Logic()
-  : sound(*this),
-    vacuum(*this),
+  : vacuum(*this),
     servo(*this),
     resetButton(*this)
 {
 }
 
 void Logic::setup() {
-  sound.setup();
   vacuum.setup();
   servo.setup();
   resetButton.setup();
@@ -30,7 +28,6 @@ void Logic::setup() {
 }
 
 void Logic::handle() {
-  sound.handle();
   vacuum.handle();
   servo.handle();
   resetButton.handle();
@@ -59,13 +56,7 @@ void Logic::handle() {
   }
 
   if (state == SETTLING && millis() - settleTime > SETTLE_DELAY_MS) {
-    Serial.println("Settled.  Playing Audio...");
-    state = ALERTING;
-    sound.playMail();
-  }
-
-  if (state == ALERTING && !sound.isPlaying()) {
-    Serial.println("Audio finished.  All DONE.");
+    Serial.println("Settled.  All DONE.");
     state = DONE;
   }
 

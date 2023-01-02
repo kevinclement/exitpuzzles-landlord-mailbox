@@ -1,17 +1,15 @@
 #pragma once
 
 #include "Arduino.h"
-#include "sound.h"
 #include "vacuum.h"
 #include "servo.h"
 #include "resetButton.h"
 
-enum State { WAITING, STARTING, DROPPING, SETTLING, ALERTING, DONE };
+enum State { WAITING, STARTING, DROPPING, SETTLING, DONE };
 
 class Logic {
 public:
   Logic();
-  Sound sound;
   Vacuum vacuum;
   MyServo servo;
   ResetButton resetButton;
