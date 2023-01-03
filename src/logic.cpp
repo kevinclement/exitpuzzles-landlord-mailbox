@@ -2,7 +2,7 @@
 #include "logic.h"
 
 #define START_DELAY_MS   3000
-#define DROP_DELAY_MS    3000
+#define DROP_DELAY_MS    100
 #define SETTLE_DELAY_MS  2000
 
 const char *stateStrings[] = { "WAITING", "STARTING", "DROPPING", "SETTLING", "DONE" };
