@@ -30,7 +30,7 @@ void MyServo::setPosition(int newPos) {
 }
 
 void MyServo::startPosition() { 
-    setPosition(15);
+    setPosition(25);
 }
 
 void MyServo::endPosition() { 
